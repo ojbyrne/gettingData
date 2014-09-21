@@ -35,6 +35,7 @@ mean_cols <- grep("mean", feature_names, ignore.case=TRUE)
 stdev_cols <- grep("std", feature_names, ignore.case=TRUE)
 
 means_and_std = cbind(full_data$Subject, full_data$Activity, full_data[, mean_cols], full_data[,stdev_cols])
+# group columns 3-88 (data values) by columns 1 and 2 (subject and activity). Get the means.
 tidy_data = aggregate(means_and_std[3:88], list(means[,1], means[,2]),mean)
 names(tidy_data)[1] = "Subject"
 names(tidy_data)[2] = "Activity"

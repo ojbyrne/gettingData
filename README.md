@@ -30,9 +30,11 @@ The run_analysis.R script, as commented in the file, does:
 
 6. converts the activity table from a number to a descriptive label using the activity_labels data
 
-7. Extracts any columns containing the text "mean" into a new table. fixed up the Subject and Activity names, because this step included the table name from the previous data set.
+7. Extracts any columns containing the text "mean" into a new table. 
 
-8. Extracts any column containing the text "std" into a new table.  Same fixup of the subject and activity names
+8. Extracts any column containing the text "std" into a new table. 
 
-9. Calculates the means of the "mean" and "std" data tables, subsetted by distinct values of "subject" and "activity" column.
+9. Combines the "mean" and "std" tables into one with "cbind" (column bind). Fixed up the Subject and Activity names, because they included  the table name from the previous data set ("data_full$Subject" instead of "Subject").
+
+10. Calculates the means of the mean_and_std table, group by distinct values of "subject" and "activity" column.
 
